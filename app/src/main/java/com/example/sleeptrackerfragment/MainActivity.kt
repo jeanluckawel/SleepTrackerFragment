@@ -46,22 +46,10 @@ class MainActivity : ComponentActivity() {
     }
 }
 @Composable
-fun ButtonCoonpoment(button_name:String){
-    Button(onClick = { /*TODO*/ }) {
+fun ButtonCoonpoment(){
+    Column(modifier = Modifier.fillMaxSize()) {
         Text(
-            text = button_name,
-            fontSize = 20.sp,
-            fontFamily = FontFamily.SansSerif,
-            fontWeight = FontWeight.Bold
-        )
-    }
-}
-
-@Composable
-fun TopBar(title: String) {
-    Column{
-        Text(
-            text = title,
+            text = "Track My Sleep Quality",
             fontFamily = FontFamily.SansSerif,
             fontSize = 24.sp,
             fontWeight = FontWeight.Bold,
@@ -69,20 +57,76 @@ fun TopBar(title: String) {
                 .padding(16.dp)
                 .fillMaxWidth()
         )
-        Column(modifier = Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
-            Row{
-                ButtonCoonpoment(button_name = "Start")
-                Spacer(modifier = Modifier.height(16.dp))
-                ButtonCoonpoment(button_name = "End")
+        Column(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            Row {
+                Button(onClick = { /*TODO*/ }) {
+                    Text(
+                        text = "Start",
+                        fontSize = 20.sp,
+                        fontFamily = FontFamily.SansSerif,
+                        fontWeight = FontWeight.Bold
+                    )
+                }
+                Button(onClick = { /*TODO*/ }) {
+                    Text(
+                        text = "End",
+                        fontSize = 20.sp,
+                        fontFamily = FontFamily.SansSerif,
+                        fontWeight = FontWeight.Bold
+                    )
+                }
             }
+        }
+        Text(
+            text = "HERE IS YOUR SLEEP DATA",
+            fontFamily = FontFamily.SansSerif,
+            fontSize = 20.sp,
+            fontWeight = FontWeight.Bold,
+            modifier = Modifier
+                .padding(16.dp)
+                .fillMaxWidth()
+        )
+        Column(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(start = 16.dp)
+        ) {
+            Text(
+                text = "Start",
+                fontFamily = FontFamily.SansSerif,
+                fontSize = 16.sp,
+                fontWeight = FontWeight.Medium,
+            )
+            Text(
+                text = "End",
+                fontFamily = FontFamily.SansSerif,
+                fontSize = 16.sp,
+                fontWeight = FontWeight.Medium,
+            )
+            Text(
+                text = "Quality",
+                fontFamily = FontFamily.SansSerif,
+                fontSize = 16.sp,
+                fontWeight = FontWeight.Medium,
+            )
+            Text(
+                text = "Hours:Minutes:Seconds",
+                fontFamily = FontFamily.SansSerif,
+                fontSize = 16.sp,
+                fontWeight = FontWeight.Medium,
+            )
         }
     }
 }
+
 
 @Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
     SleepTrackerFragmentTheme {
-      TopBar(title = "Track My Sleep Quality")
+     ButtonCoonpoment()
     }
 }
