@@ -1,4 +1,4 @@
-package com.example.sleeptrackerfragment.ui.theme
+package safety.io.sleeptracker.ui.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle
