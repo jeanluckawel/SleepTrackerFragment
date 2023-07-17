@@ -5,11 +5,14 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.imePadding
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
@@ -50,17 +53,31 @@ fun Header(text: String, backIcon: ImageVector?, background: Color = Color.DarkG
         modifier = Modifier
             .fillMaxWidth()
             .background(background)
-            .height(32.dp),
+            .height(52.dp),
         horizontalArrangement = Arrangement.Start,
         verticalAlignment = Alignment.CenterVertically
     ) {
         Spacer(modifier = Modifier.width(12.dp))
         if (null != backIcon) {
-            IconButton(onClick = { /*TODO*/ }) {
+            IconButton(
+                onClick = { /*TODO*/ },
+                modifier = Modifier
+            ) {
                 Icon(imageVector = backIcon, contentDescription = null, tint = Color.White)
             }
         }
         Text(text = text, color = Color.White)
+    }
+}
+
+@Composable
+fun Main() {
+    Column(
+        modifier = Modifier.fillMaxSize(),
+        verticalArrangement = Arrangement.Top,
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        Header(text = "Bus Schedule", backIcon = null, background = Color(0xFF9C27B0))
     }
 }
 
@@ -73,5 +90,14 @@ fun HeaderPreview() {
             backIcon = Icons.Default.ArrowBack,
             background = Color(0xFF9C27B0)
         )
+    }
+}
+
+
+@Preview(showBackground = true)
+@Composable
+fun MainPreview() {
+    SleepTrackerFragmentTheme {
+        Main()
     }
 }
