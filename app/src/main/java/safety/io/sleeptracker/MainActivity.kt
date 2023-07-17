@@ -34,10 +34,8 @@ import safety.io.sleeptracker.ui.theme.SleepTrackerFragmentTheme
 import java.time.format.TextStyle
 import java.util.Date
 import androidx.compose.ui.Alignment
-import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import safety.io.sleeptracker.ui.theme.SleepTrackerFragmentTheme
 
@@ -60,27 +58,31 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun Body(stop:String, arrival:String, name:String, time:Date){
+fun Body(stop:String, arrival:String, name:String, time:Date) {
     Column(
         modifier = Modifier
             .fillMaxSize()
             .padding(16.dp)
-    ){
+    ) {
         Row(
             modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.SpaceBetween
-        ){
-           Text(text = stop)
-          Text(text = arrival)
+        ) {
+            Text(text = stop)
+            Text(text = arrival)
         }
         Spacer(modifier = Modifier.padding(8.dp))
-        Row(modifier = Modifier.fillMaxWidth(),
+        Row(
+            modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.SpaceBetween
-        ){
+        ) {
             Text(text = name)
             Text(text = time.toString())
         }
+    }
+}
 
+@Composable
 fun Header(text: String, backIcon: ImageVector?, background: Color = Color.DarkGray) {
     Row(
         modifier = Modifier
