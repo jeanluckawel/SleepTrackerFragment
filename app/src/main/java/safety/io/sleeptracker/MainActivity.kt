@@ -113,6 +113,7 @@ fun Main() {
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Header(text = "Bus Schedule", backIcon = null, background = Color(0xFF9C27B0))
+        Body(stop = "Stop 1", arrival = "Arrival 1", name = "Name 1", time = Date())
     }
 }
 
