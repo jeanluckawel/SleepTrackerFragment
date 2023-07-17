@@ -18,6 +18,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.width
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
+import androidx.compose.material3.Divider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 
@@ -68,16 +69,36 @@ fun Body(stop:String, arrival:String, name:String, time:Date) {
             modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.SpaceBetween
         ) {
-            Text(text = stop)
-            Text(text = arrival)
+            Text(
+                text = stop,
+                fontFamily = FontFamily.SansSerif,
+                fontWeight = FontWeight.Medium
+            )
+            Text(
+                text = arrival,
+                fontFamily = FontFamily.SansSerif,
+                fontWeight = FontWeight.Medium
+            )
         }
         Spacer(modifier = Modifier.padding(8.dp))
+        Divider(
+            color = Color.Black,
+            thickness = 1.dp
+        )
         Row(
             modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.SpaceBetween
         ) {
-            Text(text = name)
-            Text(text = time.toString())
+            Text(
+                text = name,
+                fontFamily = FontFamily.SansSerif,
+                fontWeight = FontWeight.Medium
+            )
+            Text(
+                text = time.toString(),
+                fontFamily = FontFamily.SansSerif,
+                fontWeight = FontWeight.Bold
+            )
         }
     }
 }
