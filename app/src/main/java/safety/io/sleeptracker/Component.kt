@@ -10,7 +10,6 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material3.Divider
@@ -51,7 +50,7 @@ fun ListItem(name:String, time: Date) {
         modifier = Modifier
             .fillMaxWidth()
             .background(
-                Color(0xFFDBC6E0)/*,
+                Color(0xFFFDF0FF)/*,
                 shape = RoundedCornerShape(12.dp)*/
             ),
 
